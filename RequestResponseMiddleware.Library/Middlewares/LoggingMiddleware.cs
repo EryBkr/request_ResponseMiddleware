@@ -1,15 +1,18 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System.Net.Http;
 
 namespace RequestResponseMiddleware.Library.Middlewares
 {
-    class LoggingMiddleware
+    public class LoggingMiddleware
     {
         private readonly RequestDelegate _next;
 
-        public async Task Invoke(HttpContent context)
+        public async Task Invoke(HttpContext context)
         {
-            
+
+
+            //Request
+            await _next(context); //Executing
+            //Response
         }
     }
 }

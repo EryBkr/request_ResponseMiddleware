@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "23JR93MPpUCIH1z13peIhxKkpmBupQZHQtRgcT3T61TJn5Got8y+u2nl9RAR6Zji1m6+vF/ISdt684MEUHiEWg==",
+  "dgSpecHash": "RRYw8NVheRGo6NaJkDrUmki7Pfh+uDkQq9JZWko6WQhx38V2xemaW2K1gro7xg4+755pr7RNo8xaN4HHLHZTuw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Blackerback\\OneDrive\\Masaüstü\\OwnLibrary\\RequestResponseMiddlewareSolution\\RequestResponseMiddleware.Library\\RequestResponseMiddleware.Library.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }
