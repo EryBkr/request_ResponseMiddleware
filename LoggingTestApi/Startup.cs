@@ -53,7 +53,10 @@ namespace LoggingTestApi
             {
                 options.UseHandler(async context => 
                 {
-
+                    Console.WriteLine($"Request Body {context.RequestBody}");
+                    Console.WriteLine($"Response Body {context.ResponseBody}");
+                    Console.WriteLine($"Timing {context.FormattedCreationTime}");
+                    Console.WriteLine($"URL {context.Url}");
                 });    
             });
 

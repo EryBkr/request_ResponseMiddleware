@@ -26,11 +26,11 @@ namespace RequestResponseMiddleware.Library.Models
 
         //Response süresi
         [JsonIgnore] //TimeSpan içerisinde bir çok proprty barındıyoruz,o yüzden formatlanmış olarak geri dönmeyi ve bu field'ı ignore etmeyi uygun gördük
-        public TimeSpan ResponseCreationTime { get; set; }
+        public TimeSpan? ResponseCreationTime { get; set; }
 
         //Formatlanmış halde TimeSpan verimizi dönüyoruz
         public string FormattedCreationTime =>
-            FormattedCreationTime is null
+            ResponseCreationTime is null
             ? "00:00:000"
             : string.Format("{0:mm\\:ss\\.fff}", ResponseCreationTime);
 

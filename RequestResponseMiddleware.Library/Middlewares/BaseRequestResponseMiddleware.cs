@@ -22,6 +22,7 @@ namespace RequestResponseMiddleware.Library.Middlewares
         {
             _next = next;
             logWriter = _logWriter;
+            recyclableMemoryStreamManager = new RecyclableMemoryStreamManager();
         }
 
         //Sadece inherit edildiği yerde kullanılabilsin
@@ -52,7 +53,7 @@ namespace RequestResponseMiddleware.Library.Middlewares
             string responseBodyText = await new StreamReader(context.Response.Body).ReadToEndAsync();
 
             //Tek başa alıyorum diğer middleware'lerin okuyabilmesi için
-            context.Request.Body.Seek(0, SeekOrigin.Begin);
+            context.Response.Body.Seek(0, SeekOrigin.Begin);
 
 
             //HTTPContext'ten beslenerek, gerekli log modelimizi oluşturuyoruz
