@@ -4,8 +4,8 @@ namespace RequestResponseMiddleware.Library.Interfaces
 {
     public interface ILogWriter
     {
-
-        ILogMessageCreator MessageCreator { get; set; }
+        //Sadece yapıcı metotta set ettiğimiz için setter'ı sildim
+        ILogMessageCreator MessageCreator { get;}
 
         /// <summary>
         /// 

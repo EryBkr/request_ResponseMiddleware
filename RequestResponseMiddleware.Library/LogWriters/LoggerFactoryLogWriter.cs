@@ -12,7 +12,7 @@ namespace RequestResponseMiddleware.Library.LogWriters
         private readonly LoggingOptions _options;
 
         //ILogWriter'dan geliyor
-        public ILogMessageCreator MessageCreator { get; set; }
+        public ILogMessageCreator MessageCreator { get; }
 
         public LoggerFactoryLogWriter(ILoggerFactory loggerFactory, LoggingOptions options)
         {
