@@ -3,7 +3,7 @@ using RequestResponseMiddleware.Library.Models;
 
 namespace RequestResponseMiddleware.Library.Middlewares
 {
-    class HandlerRequestResponseLoggingMiddleware : BaseRequestResponseMiddleware
+    public class HandlerRequestResponseLoggingMiddleware : BaseRequestResponseMiddleware
     {
         private readonly Func<RequestResponseContext, Task> reqResHandler;
 
