@@ -14,9 +14,12 @@ namespace RequestResponseMiddleware.Library
             var opt = new RequestResponseOptions();
             optionAction(opt);
 
+            //Hem logger factory gelmedi hem de requestResponseHandler boş ise hata fırlatıyorum
+            if (opt.ReqResHandler is null && opt._loggerFactory is null)
+                throw new ArgumentNullException($"{nameof(opt.ReqResHandler)} and {nameof(opt._loggerFactory)}");
 
             //Log Factory'inin gelip gelmemesi senaryosuna göre oluşturdum
-            ILogWriter _logWriter = opt._loggerFactory is null 
+            ILogWriter _logWriter = opt._loggerFactory is null
                 ? new NullLogWriter()
                 : new LoggerFactoryLogWriter(opt._loggerFactory, opt._loggingOptions);
 
@@ -25,7 +28,7 @@ namespace RequestResponseMiddleware.Library
             if (opt.ReqResHandler is not null)
                 appBuilder.UseMiddleware<HandlerRequestResponseLoggingMiddleware>(opt.ReqResHandler, _logWriter);
             else
-                appBuilder.UseMiddleware<LoggingMiddleware>(opt.ReqResHandler, _logWriter);
+                appBuilder.UseMiddleware<LoggingMiddleware>(_logWriter);
 
             return appBuilder;
         }

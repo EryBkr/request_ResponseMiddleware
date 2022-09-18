@@ -28,6 +28,11 @@ namespace LoggingTestApi
         {
 
             services.AddControllers();
+
+            //Log Factory testi yapacaðýmýz için öncelikle log servisimizi eklememiz gerekiyor
+            services.AddLogging(conf => { conf.AddConsole(); });
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LoggingTestApi", Version = "v1" });
@@ -49,15 +54,17 @@ namespace LoggingTestApi
             app.UseAuthorization();
 
             //Logging Library'imizi ekledik
-            app.AddRequestResponseMiddleware(options=> 
+            app.AddRequestResponseMiddleware(options =>
             {
-                options.UseHandler(async context => 
+                //Sistemin kendisinden ILoggerFactory'i talep ediyoruz
+                options.UseLogger(app.ApplicationServices.GetRequiredService<ILoggerFactory>(),opt=> 
                 {
-                    Console.WriteLine($"Request Body {context.RequestBody}");
-                    Console.WriteLine($"Response Body {context.ResponseBody}");
-                    Console.WriteLine($"Timing {context.FormattedCreationTime}");
-                    Console.WriteLine($"URL {context.Url}");
-                });    
+                    opt.LogLevel = LogLevel.Error;
+                    opt.LoggerCategoryName="My Application Category Name";
+                    opt.LoggingFields.Add(RequestResponseMiddleware.Library.Models.LogFields.HostName);
+                    opt.LoggingFields.Add(RequestResponseMiddleware.Library.Models.LogFields.Response);
+                    opt.LoggingFields.Add(RequestResponseMiddleware.Library.Models.LogFields.Request);
+                });
             });
 
             app.UseEndpoints(endpoints =>
