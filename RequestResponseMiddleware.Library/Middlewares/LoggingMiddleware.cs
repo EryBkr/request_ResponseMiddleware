@@ -1,18 +1,24 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.IO;
+using RequestResponseMiddleware.Library.Models;
+using System.Diagnostics;
+using System.IO;
 
 namespace RequestResponseMiddleware.Library.Middlewares
 {
-    public class LoggingMiddleware
+    public class LoggingMiddleware : BaseRequestResponseMiddleware
     {
-        private readonly RequestDelegate _next;
-
-        public async Task Invoke(HttpContext context)
+        public LoggingMiddleware(RequestDelegate next, RequestResponseOptions reqOptions) : base(next)
         {
 
-
-            //Request
-            await _next(context); //Executing
-            //Response
         }
+        public async Task Invoke(HttpContext context)
+        {
+            //Oluşan log datalarını aldım
+            var reqResContext =await base.InvokeBaseMiddleware(context);
+        }
+
+
+
     }
 }
