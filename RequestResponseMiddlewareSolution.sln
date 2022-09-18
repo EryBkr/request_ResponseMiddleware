@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32407.337
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestResponseMiddleware.Library", "RequestResponseMiddleware.Library\RequestResponseMiddleware.Library.csproj", "{F1539C7E-57AD-47C0-A365-C587423EC449}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestResponseMiddleware.Library", "RequestResponseMiddleware.Library\RequestResponseMiddleware.Library.csproj", "{F1539C7E-57AD-47C0-A365-C587423EC449}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingTestApi", "LoggingTestApi\LoggingTestApi.csproj", "{FB11BFC6-7BB6-4B5C-8201-B8D3CCCDE03E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F1539C7E-57AD-47C0-A365-C587423EC449}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1539C7E-57AD-47C0-A365-C587423EC449}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1539C7E-57AD-47C0-A365-C587423EC449}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB11BFC6-7BB6-4B5C-8201-B8D3CCCDE03E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB11BFC6-7BB6-4B5C-8201-B8D3CCCDE03E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB11BFC6-7BB6-4B5C-8201-B8D3CCCDE03E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB11BFC6-7BB6-4B5C-8201-B8D3CCCDE03E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
