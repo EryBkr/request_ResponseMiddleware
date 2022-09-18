@@ -2,7 +2,6 @@ C:\Users\Blackerback\OneDrive\Masaüstü\OwnLibrary\RequestResponseMiddlewareSol
 C:\Users\Blackerback\OneDrive\Masaüstü\OwnLibrary\RequestResponseMiddlewareSolution\RequestResponseMiddleware.Library\bin\Debug\net5.0\RequestResponseMiddleware.Library.dll
 C:\Users\Blackerback\OneDrive\Masaüstü\OwnLibrary\RequestResponseMiddlewareSolution\RequestResponseMiddleware.Library\bin\Debug\net5.0\ref\RequestResponseMiddleware.Library.dll
 C:\Users\Blackerback\OneDrive\Masaüstü\OwnLibrary\RequestResponseMiddlewareSolution\RequestResponseMiddleware.Library\bin\Debug\net5.0\RequestResponseMiddleware.Library.pdb
-C:\Users\Blackerback\OneDrive\Masaüstü\OwnLibrary\RequestResponseMiddlewareSolution\RequestResponseMiddleware.Library\obj\Debug\net5.0\RequestResponseMiddleware.Library.csproj.AssemblyReference.cache
 C:\Users\Blackerback\OneDrive\Masaüstü\OwnLibrary\RequestResponseMiddlewareSolution\RequestResponseMiddleware.Library\obj\Debug\net5.0\RequestResponseMiddleware.Library.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Blackerback\OneDrive\Masaüstü\OwnLibrary\RequestResponseMiddlewareSolution\RequestResponseMiddleware.Library\obj\Debug\net5.0\RequestResponseMiddleware.Library.AssemblyInfoInputs.cache
 C:\Users\Blackerback\OneDrive\Masaüstü\OwnLibrary\RequestResponseMiddlewareSolution\RequestResponseMiddleware.Library\obj\Debug\net5.0\RequestResponseMiddleware.Library.AssemblyInfo.cs
