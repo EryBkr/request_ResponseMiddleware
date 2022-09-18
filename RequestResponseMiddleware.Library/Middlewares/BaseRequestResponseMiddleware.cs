@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.IO;
+using RequestResponseMiddleware.Library.Interfaces;
 using RequestResponseMiddleware.Library.Models;
 using System.Diagnostics;
 using System.IO;
@@ -15,10 +16,12 @@ namespace RequestResponseMiddleware.Library.Middlewares
         private readonly RequestResponseOptions _options;
         private readonly RecyclableMemoryStreamManager recyclableMemoryStreamManager;
         private readonly RequestDelegate _next;
+        private readonly ILogWriter logWriter;
 
-        public BaseRequestResponseMiddleware(RequestDelegate next)
+        public BaseRequestResponseMiddleware(RequestDelegate next, ILogWriter _logWriter)
         {
             _next = next;
+            logWriter = _logWriter;
         }
 
         //Sadece inherit edildiği yerde kullanılabilsin
@@ -53,13 +56,17 @@ namespace RequestResponseMiddleware.Library.Middlewares
 
 
             //HTTPContext'ten beslenerek, gerekli log modelimizi oluşturuyoruz
-            return new RequestResponseContext(context)
+            var result = new RequestResponseContext(context)
             {
                 ResponseCreationTime = TimeSpan.FromTicks(sw.ElapsedTicks),
                 RequestBody = requestBody,
                 ResponseBody = responseBodyText
             };
 
+            //Gelen modelin loglanması için log servisime gönderiyorum
+            await logWriter.Write(result);
+
+            return result;
         }
 
         private static string ReadStreamInChunks(Stream stream)

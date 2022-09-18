@@ -7,7 +7,7 @@ namespace RequestResponseMiddleware.Library.Models
     //Model
     public class RequestResponseContext
     {
-        private readonly HttpContext context;
+        internal readonly HttpContext context;
 
         public RequestResponseContext(HttpContext context)
         {
