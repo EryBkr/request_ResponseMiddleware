@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using RequestResponseMiddleware.Library;
+using RequestResponseMiddlewareFileLogger.Library;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,18 +54,15 @@ namespace LoggingTestApi
 
             app.UseAuthorization();
 
-            //Logging Library'imizi ekledik
-            app.AddRequestResponseMiddleware(options =>
+            //File Logging Library'imizi ekledik
+            app.AddRequestResponseFileLoggerMiddleware(options =>
             {
-                //Sistemin kendisinden ILoggerFactory'i talep ediyoruz
-                options.UseLogger(app.ApplicationServices.GetRequiredService<ILoggerFactory>(),opt=> 
-                {
-                    opt.LogLevel = LogLevel.Error;
-                    opt.LoggerCategoryName="My Application Category Name";
-                    opt.LoggingFields.Add(RequestResponseMiddleware.Library.Models.LogFields.HostName);
-                    opt.LoggingFields.Add(RequestResponseMiddleware.Library.Models.LogFields.Response);
-                    opt.LoggingFields.Add(RequestResponseMiddleware.Library.Models.LogFields.Request);
-                });
+                //Action olarak ayarlarý alýyoruz,dikkat edersek new operasyonu yapmadýk, dll bu iþlemi kendisi yapacak
+                options.FileDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                options.FileName = "Eray_Bakýr_Log";
+                options.Extension = "txt";
+                options.UseJsonFormat = false;
+                options.ForceCreateDirectory = true;
             });
 
             app.UseEndpoints(endpoints =>

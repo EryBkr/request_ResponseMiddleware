@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.32407.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestResponseMiddleware.Library", "RequestResponseMiddleware.Library\RequestResponseMiddleware.Library.csproj", "{F1539C7E-57AD-47C0-A365-C587423EC449}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingTestApi", "LoggingTestApi\LoggingTestApi.csproj", "{FB11BFC6-7BB6-4B5C-8201-B8D3CCCDE03E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggingTestApi", "LoggingTestApi\LoggingTestApi.csproj", "{FB11BFC6-7BB6-4B5C-8201-B8D3CCCDE03E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestResponseMiddlewareFileLogger.Library", "RequestResponseMiddlewareFileLogger.Library\RequestResponseMiddlewareFileLogger.Library.csproj", "{ABD576C3-8CB8-4662-B6AF-5AE46B86BE3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FB11BFC6-7BB6-4B5C-8201-B8D3CCCDE03E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB11BFC6-7BB6-4B5C-8201-B8D3CCCDE03E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB11BFC6-7BB6-4B5C-8201-B8D3CCCDE03E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABD576C3-8CB8-4662-B6AF-5AE46B86BE3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABD576C3-8CB8-4662-B6AF-5AE46B86BE3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABD576C3-8CB8-4662-B6AF-5AE46B86BE3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABD576C3-8CB8-4662-B6AF-5AE46B86BE3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
