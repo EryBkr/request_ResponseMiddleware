@@ -1,17 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using RequestResponseMiddleware.Library;
-using RequestResponseMiddlewareFileLogger.Library;
+using RequestResponseMiddleware.FileLogger.Library;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace LoggingTestApi
 {
@@ -59,7 +54,7 @@ namespace LoggingTestApi
             {
                 //Action olarak ayarlarý alýyoruz,dikkat edersek new operasyonu yapmadýk, dll bu iþlemi kendisi yapacak
                 options.FileDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                options.FileName = "Eray_Bakýr_Log";
+                options.FileName = "Eray_Bakýr_NEW_Log";
                 options.Extension = "txt";
                 options.UseJsonFormat = false;
                 options.ForceCreateDirectory = true;

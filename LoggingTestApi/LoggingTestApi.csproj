@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RequestResponseMiddlewareFileLogger.Library\RequestResponseMiddlewareFileLogger.Library.csproj" />
+    <ProjectReference Include="..\RequestResponseMiddleware.FileLogger.Library\RequestResponseMiddleware.FileLogger.Library.csproj" />
   </ItemGroup>
 
 </Project>

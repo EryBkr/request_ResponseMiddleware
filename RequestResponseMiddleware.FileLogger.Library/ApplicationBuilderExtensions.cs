@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using RequestResponseMiddleware.FileLogger.Library.LogWriters;
+using RequestResponseMiddleware.FileLogger.Library.Models;
 using RequestResponseMiddleware.Library.Interfaces;
 using RequestResponseMiddleware.Library.Middlewares;
-using RequestResponseMiddlewareFileLogger.Library.LogWriters;
-using RequestResponseMiddlewareFileLogger.Library.Models;
+using System;
 
-namespace RequestResponseMiddlewareFileLogger.Library
+namespace RequestResponseMiddleware.FileLogger.Library
 {
     public static class ApplicationBuilderExtensions
     {
@@ -14,13 +15,10 @@ namespace RequestResponseMiddlewareFileLogger.Library
             var opt = new FileLoggingOptions();
             optionAction(opt);
 
-
-            //ILogWriter'ın instance'ını oluşturuyorum,json tipine göre ayrımı zaten kendi içerisinde yapıyor
+            //Kullanıcı tarafından gelen options'u FileLogWritter class'ıma veriyorum
             ILogWriter _logWriter = new FileLogWriter(opt);
 
-
             appBuilder.UseMiddleware<LoggingMiddleware>(_logWriter);
-
 
             return appBuilder;
         }

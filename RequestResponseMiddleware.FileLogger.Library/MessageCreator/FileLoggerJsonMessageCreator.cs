@@ -1,10 +1,15 @@
 ﻿using RequestResponseMiddleware.Library.Interfaces;
 using RequestResponseMiddleware.Library.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 
-namespace RequestResponseMiddlewareFileLogger.Library.MessageCreator
+namespace RequestResponseMiddleware.FileLogger.Library.MessageCreator
 {
-    //Json olarak istenirse
+    //Json Format ta çıktı verebilmek için
     internal class FileLoggerJsonMessageCreator : ILogMessageCreator
     {
         public string Create(RequestResponseContext context)
